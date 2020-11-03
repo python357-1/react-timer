@@ -11,6 +11,13 @@ class App extends Component {
 		hours: 0
 	}
 
+	componentDidMount() {
+		fetch('http://localhost/time', {
+			method: 'GET'
+		})
+			.then(response => console.log(response))
+	}
+
 	resetScore = () => {
 		this.setState({ seconds: 10, minutes: 10, hours: 10 });
 		console.log(this.state)
